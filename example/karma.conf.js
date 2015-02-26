@@ -3,7 +3,7 @@ module.exports = function(karma){
     frameworks: ['mocha'],
 
     files: [
-      "../node_modules/angular/angular.js",
+      "node_modules/angular/angular.js",
       "node_modules/angular-mocks/angular-mocks.js",
       "src/math.js",
       "src/math-test.js"
