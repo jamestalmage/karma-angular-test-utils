@@ -4,7 +4,7 @@
   "description": "ng-test-utils plugin for karma",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "cd example && npm install && karma start"
   },
   "repository": {
     "type": "git",
@@ -23,13 +23,5 @@
   "homepage": "https://github.com/jamestalmage/karma-angular-test-utils",
   "dependencies": {
     "ng-test-utils": "0.0.1"
-  },
-  "devDependencies": {
-    "angular": "^1.3.14",
-    "angular-mocks": "^1.3.14",
-    "karma": "^0.12.31",
-    "karma-mocha": "^0.1.10",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "mocha": "^2.1.0"
   }
 }

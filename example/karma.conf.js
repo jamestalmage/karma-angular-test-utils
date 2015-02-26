@@ -9,7 +9,7 @@ module.exports = function(karma){
       "src/math-test.js"
     ],
 
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     preprocessors: {
       '**/*-test.js': ['ng-inject']
@@ -19,7 +19,7 @@ module.exports = function(karma){
       sourceMap:true
     },
 
-    singleRun: false,
-    autoWatch: true
+    singleRun: true,
+    autoWatch: false
   });
 };
