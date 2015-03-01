@@ -1,4 +1,4 @@
-var ngInject = require('ng-test-utils/src/ngInject');
+var ngInject = require('ng-test-utils');
 var path = require('path');
 
 var createNgInjectPreprocessor = function(args, config, logger, helper) {
