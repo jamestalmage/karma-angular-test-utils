@@ -16,7 +16,6 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
   return function(content, file, done) {
     var result = null;
     var map;
-    var datauri;
 
     log.debug('Processing "%s".', file.originalPath);
     file.path = file.originalPath;
@@ -39,13 +38,9 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
     }
 
     if (result.map) {
-      map = result.map;
-      map.sources[0] = path.basename(file.originalPath) ;
-      map.sourcesContent = [content];
-      map.file = path.basename(file.path);
-      file.sourceMap = map;
-      datauri = 'data:application/json;charset=utf-8;base64,' + new Buffer(JSON.stringify(map)).toString('base64')
-      done(null, result.code + '\n//@ sourceMappingURL=' + datauri + '\n');
+      file.sourceMap = result.map;
+      map = convert.fromObject(result.map);
+      done(null, result.code + '\n' + map.toComment() + '\n');
     } else {
       done(null, result.code)
     }
