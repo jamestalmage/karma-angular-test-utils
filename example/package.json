@@ -14,7 +14,7 @@
     "mocha": "^2.1.0"
   },
   "scripts": {
-    "test": "npm i -D .. && karma start",
-    "watch": "npm i -D .. && karma start --auto-watch --no-single-run --browsers Chrome"
+    "test": "npm i -D .. && ./node_modules/karma/bin/karma start --browsers Chrome",
+    "watch": "npm i -D .. && ./node_modules/karma/bin/karma start --auto-watch --no-single-run --browsers Chrome"
   }
 }
