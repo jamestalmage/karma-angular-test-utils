@@ -1,5 +1,6 @@
 var ngInject = require('ng-test-utils');
-var path = require('path');
+var path     = require('path');
+var convert  = require('convert-source-map');
 
 var createNgInjectPreprocessor = function(args, config, logger, helper) {
   config = config || {};
@@ -24,12 +25,16 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
 
     if(options.sourceMap){
       opts.sourceFileName = file.originalPath; // TODO: Should this just be file.path?
+      var previousMap = convert.fromSource(content);
+      if(previousMap){
+        opts.inputSourceMap = previousMap.toObject();
+      }
     }
 
     try {
       result = ngInject(content, opts);
     } catch (e) {
-      log.error('%s\n  at %s:%d', e.message, file.originalPath, e.location.first_line);
+      log.error('%s\n  at %s:%d', e.message, file.originalPath, e.location && e.location.first_line);
       return done(e, null);
     }
 

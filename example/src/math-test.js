@@ -11,7 +11,7 @@ describe('math', function() {
   };
 
   // @ngInject
-  var add, subtract;
+  var add, subtract, total;
 
   it('add', function() {
     var result = add(2, 2);
@@ -24,9 +24,7 @@ describe('math', function() {
   });
 
   it('sum', function(){
-    inject(function(sum){
-      assert.equals(sum(1,2,3,4,5),15);
-    });
+    assert.equals(total(1,2,3,4,5),15);
   });
 
   var assert = {
