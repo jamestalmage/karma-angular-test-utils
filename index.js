@@ -14,35 +14,21 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
 
 
   return function(content, file, done) {
-    var result = null;
-    var map;
-
     log.debug('Processing "%s".', file.originalPath);
     file.path = file.originalPath;
 
-    var opts = {};
-
-    if(options.sourceMap){
-      opts.sourceFileName = file.originalPath; // TODO: Should this just be file.path?
-      var previousMap = convert.fromSource(content);
-      if(previousMap){
-        opts.inputSourceMap = previousMap.toObject();
-      }
-    }
+    var opts = helper.merge({
+      sourceFileName: file.originalPath,
+      appendSourceMapComment: true
+    },options);
 
     try {
-      result = ngInject(content, opts);
+      var result = ngInject(content, opts);
+      if(result.map) file.sourceMap = result.map;
+      done(null, result.code);
     } catch (e) {
       log.error('%s\n  at %s:%d', e.message, file.originalPath, e.location && e.location.first_line);
       return done(e, null);
-    }
-
-    if (result.map) {
-      file.sourceMap = result.map;
-      map = convert.fromObject(result.map);
-      done(null, result.code + '\n' + map.toComment() + '\n');
-    } else {
-      done(null, result.code)
     }
   };
 };
