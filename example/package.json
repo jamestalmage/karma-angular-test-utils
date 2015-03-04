@@ -9,7 +9,7 @@
     "karma-chrome-launcher": "^0.1.4",
     "karma-coffee-preprocessor": "^0.2.1",
     "karma-mocha": "^0.1.10",
-    "karma-ng-test-utils": "0.0.2",
+    "karma-ng-test-utils": "0.0.3",
     "karma-phantomjs-launcher": "^0.1.4",
     "mocha": "^2.1.0"
   },

@@ -1,6 +1,5 @@
-var ngInject = require('ng-test-utils');
+var testUtils = require('ng-test-utils');
 var path     = require('path');
-var convert  = require('convert-source-map');
 
 var createNgInjectPreprocessor = function(args, config, logger, helper) {
   config = config || {};
@@ -23,7 +22,7 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
     },options);
 
     try {
-      var result = ngInject(content, opts);
+      var result = testUtils(content, opts);
       if(result.map) file.sourceMap = result.map;
       done(null, result.code);
     } catch (e) {
