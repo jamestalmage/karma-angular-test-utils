@@ -1,6 +1,6 @@
 module.exports = function(karma){
   karma.set({
-    frameworks: ['angular','mocha'],
+    frameworks: ['angular', 'mocha'],
 
     files: [
       "src/math.js",
@@ -11,11 +11,11 @@ module.exports = function(karma){
     browsers: ['PhantomJS'],
 
     preprocessors: {
-      '**/*-test.js': ['ng-inject'],
-      '**/*-test.coffee': ['coffee', 'ng-inject']
+      '**/*-test.js': ['ng-test-utils'],
+      '**/*-test.coffee': ['coffee', 'ng-test-utils']
     },
 
-    ngInjectPreprocessor:{
+    ngTestUtilsPreprocessor:{
       sourceMap:true
     },
 

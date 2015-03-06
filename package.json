@@ -4,7 +4,7 @@
   "description": "ng-test-utils plugin for karma",
   "main": "index.js",
   "scripts": {
-    "test": "cd example && npm i -D .. && npm install && ./node_modules/karma/bin/karma start"
+    "test": "cd example && npm i -D .. && npm install && gulp && ./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/jamestalmage/karma-angular-test-utils",
   "dependencies": {
-    "ng-test-utils": "0.0.7"
+    "ng-test-utils": "0.0.x"
   }
 }

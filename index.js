@@ -1,15 +1,14 @@
 var testUtils = require('ng-test-utils');
 var path     = require('path');
 
-var createNgInjectPreprocessor = function(args, config, logger, helper) {
-  config = config || {};
+var createNgInjectPreprocessor = function(config, logger, helper) {
 
   var log = logger.create('preprocessor.ng-test-utils');
 
   var defaultOptions = {
     sourceMap: false
   };
-  var options = helper.merge(defaultOptions, args || {}, config || {});
+  var options = helper.merge(defaultOptions, config || {});
 
 
   return function(content, file, done) {
@@ -23,7 +22,9 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
 
     try {
       var result = testUtils(content, opts);
-      if(result.map) file.sourceMap = result.map;
+      if(result.map){
+        file.sourceMap = result.map.toObject();
+      }
       done(null, result.code);
     } catch (e) {
       log.error('%s\n  at %s:%d', e.message, file.originalPath, e.location && e.location.first_line);
@@ -32,9 +33,9 @@ var createNgInjectPreprocessor = function(args, config, logger, helper) {
   };
 };
 
-createNgInjectPreprocessor.$inject = ['args', 'config.ngInjectPreprocessor', 'logger', 'helper'];
+createNgInjectPreprocessor.$inject = ['config.ngTestUtilsPreprocessor', 'logger', 'helper'];
 
 // PUBLISH DI MODULE
 module.exports = {
-  'preprocessor:ng-inject': ['factory', createNgInjectPreprocessor]
+  'preprocessor:ng-test-utils': ['factory', createNgInjectPreprocessor]
 };
