@@ -39,13 +39,13 @@ function karmaConf(coffee, error){
     [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'src/math.js',
-      'src/{prefix}{error}-test.' + (coffee ? 'coffee' : 'js')
+      'example/src/math.js',
+      'example/src/{prefix}{error}-test.' + (coffee ? 'coffee' : 'js')
     ],
     {
       preprocessors: {
-        'src/*-test.coffee':['coffee','ng-test-utils'],
-        'src/*-test.js':['ng-test-utils']
+        'example/src/*-test.coffee':['coffee','ng-test-utils'],
+        'example/src/*-test.js':['ng-test-utils']
       },
       ngTestUtilsPreprocessor:{
         sourceMap:true
@@ -55,7 +55,16 @@ function karmaConf(coffee, error){
           bare: true,
           sourceMap: true
         }
-      }
+      },
+      plugins: [
+        "karma-angular",
+        "karma-chrome-launcher",
+        "karma-coffee-preprocessor",
+        "karma-firefox-launcher",
+        "karma-junit-reporter",
+        "karma-mocha",
+        require('./index.js')
+      ]
     }
   )
 }
