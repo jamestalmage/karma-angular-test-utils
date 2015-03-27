@@ -1,21 +1,21 @@
-karma-ng-test-utils
+karma-tang
 -------------------
-Karma preprocessor support for [ng-test-utils](https://github.com/jamestalmage/angular-test-utils).
+Karma preprocessor support for [tang](https://github.com/jamestalmage/angular-test-utils).
 This is the recommended way to apply the transforms to your tests.
 
 Install:
 ```
-npm install --save-dev ng-test-utils karma-ng-test-utils
+npm install --save-dev tang karma-tang
 ```
 
 Here is an example excerpt from a `karma.conf.js` folder using both coffee and ng-test-utils.
 
 ```javascript
 preprocessors: {
-  'example/src/*-test.coffee':['coffee','ng-test-utils'],
-  'example/src/*-test.js':['ng-test-utils']
+  'example/src/*-test.coffee':['coffee','tang'],
+  'example/src/*-test.js':['tang']
 },
-ngTestUtilsPreprocessor:{
+tang:{
   sourceMap:true
 },
 coffeePreprocessor: {

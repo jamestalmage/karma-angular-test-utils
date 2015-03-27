@@ -11,8 +11,8 @@ module.exports = function(karma){
     browsers: ['PhantomJS'],
 
     preprocessors: {
-      '**/*-test.js': ['ng-test-utils'],
-      '**/*-test.coffee': ['coffee', 'ng-test-utils']
+      '**/*-test.js': ['tang'],
+      '**/*-test.coffee': ['coffee', 'tang']
     },
 
     ngTestUtilsPreprocessor:{

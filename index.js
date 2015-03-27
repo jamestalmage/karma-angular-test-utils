@@ -33,7 +33,7 @@ var createNgInjectPreprocessor = function(config, logger, helper) {
   };
 };
 
-createNgInjectPreprocessor.$inject = ['config.ngTestUtilsPreprocessor', 'logger', 'helper'];
+createNgInjectPreprocessor.$inject = ['config.tang', 'logger', 'helper'];
 
 // PUBLISH DI MODULE
 module.exports = {

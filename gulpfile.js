@@ -44,10 +44,10 @@ function karmaConf(coffee, error){
     ],
     {
       preprocessors: {
-        'example/src/*-test.coffee':['coffee','ng-test-utils'],
-        'example/src/*-test.js':['ng-test-utils']
+        'example/src/*-test.coffee':['coffee','tang'],
+        'example/src/*-test.js':['tang']
       },
-      ngTestUtilsPreprocessor:{
+      tang:{
         sourceMap:true
       },
       coffeePreprocessor: {
