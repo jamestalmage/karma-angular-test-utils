@@ -1,9 +1,9 @@
-var testUtils = require('ng-test-utils');
+var testUtils = require('tang');
 var path     = require('path');
 
 var createNgInjectPreprocessor = function(config, logger, helper) {
 
-  var log = logger.create('preprocessor.ng-test-utils');
+  var log = logger.create('preprocessor.tang');
 
   var defaultOptions = {
     sourceMap: false
@@ -37,5 +37,5 @@ createNgInjectPreprocessor.$inject = ['config.ngTestUtilsPreprocessor', 'logger'
 
 // PUBLISH DI MODULE
 module.exports = {
-  'preprocessor:ng-test-utils': ['factory', createNgInjectPreprocessor]
+  'preprocessor:tang': ['factory', createNgInjectPreprocessor]
 };
