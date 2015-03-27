@@ -15,7 +15,7 @@ module.exports = function(karma){
       '**/*-test.coffee': ['coffee', 'tang']
     },
 
-    ngTestUtilsPreprocessor:{
+    tang:{
       sourceMap:true
     },
 
