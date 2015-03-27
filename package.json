@@ -4,7 +4,7 @@
   "description": "tang plugin for karma",
   "main": "index.js",
   "scripts": {
-    "test": "npm i ng-test-utils@0.0.x && gulp && cd example && npm i -D .. && npm install && ./node_modules/karma/bin/karma start"
+    "test": "npm i tang@0.1.x && gulp && cd example && npm i -D .. && npm install && ./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
