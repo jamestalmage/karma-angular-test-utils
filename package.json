@@ -1,6 +1,6 @@
 {
   "name": "karma-ng-test-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ng-test-utils plugin for karma",
   "main": "index.js",
   "scripts": {

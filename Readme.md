@@ -1,5 +1,8 @@
 karma-ng-test-utils
 -------------------
+This project has changed it's name to [karma-tang](https://github.com/jamestalmage/karma-tang).
+All further updates will be under the new name. Change your dependencies now!
+
 Karma preprocessor support for [ng-test-utils](https://github.com/jamestalmage/angular-test-utils).
 This is the recommended way to apply the transforms to your tests.
 
