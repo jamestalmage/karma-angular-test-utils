@@ -1,7 +1,12 @@
 karma-tang
 -------------------
 Karma preprocessor support for [tang](https://github.com/jamestalmage/tang).
-This is the recommended way to apply the transforms to your tests.
+
+[Tang](https://github.com/jamestalmage/tang) provides a series of annotations that make it easier
+to test your angular code. See the [tang readme](https://github.com/jamestalmage/tang) to understand what
+is possible.
+
+This plugin is the recommended way to apply the `tang` annotations to your tests.
 
 Install:
 ```
