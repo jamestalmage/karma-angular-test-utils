@@ -1,6 +1,6 @@
 karma-tang
 -------------------
-Karma preprocessor support for [tang](https://github.com/jamestalmage/angular-test-utils).
+Karma preprocessor support for [tang](https://github.com/jamestalmage/tang).
 This is the recommended way to apply the transforms to your tests.
 
 Install:
@@ -8,7 +8,7 @@ Install:
 npm install --save-dev tang karma-tang
 ```
 
-Here is an example excerpt from a `karma.conf.js` folder using both coffee and ng-test-utils.
+Here is an example excerpt from a `karma` config using both coffee and ng-test-utils.
 
 ```javascript
 preprocessors: {
